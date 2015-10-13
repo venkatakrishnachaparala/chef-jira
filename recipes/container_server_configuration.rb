@@ -1,4 +1,4 @@
-settings = Jira.settings(node)
+settings = merge_jira_settings
 
 template "#{node['jira']['install_path']}/bin/permgen.sh" do
   source 'tomcat/permgen.sh.erb'

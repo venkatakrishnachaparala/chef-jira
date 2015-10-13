@@ -1,4 +1,4 @@
-settings = Jira.settings(node)
+settings = merge_jira_settings
 
 include_recipe 'jira::database' if settings['database']['host'] == '127.0.0.1'
 include_recipe "jira::#{node['jira']['install_type']}"

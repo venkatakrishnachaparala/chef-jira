@@ -3,41 +3,43 @@ module Jira
   # Jira::Helpers module
   # rubocop:disable Metrics/ModuleLength
   module Helpers
-    # TODO: fix AbcSize
-    # rubocop:disable Metrics/AbcSize
-    class Jira
-      def self.settings(node)
-        begin
-          if Chef::Config[:solo]
-            begin
-              settings = Chef::DataBagItem.load('jira', 'jira')['local']
-            rescue
-              Chef::Log.info('No jira data bag found')
-            end
-          else
-            begin
-              settings = Chef::EncryptedDataBagItem.load('jira', 'jira')[node.chef_environment]
-            rescue
-              Chef::Log.info('No jira encrypted data bag found')
-            end
-          end
-        ensure
-          settings ||= node['jira'].to_hash
+    # Merges JIRA settings from data bag and node attributes.
+    # Data dag settings always has a higher priority.
+    #
+    # @return [Hash] Settings hash
+    def merge_jira_settings
+      @settings_from_data_bag ||= settings_from_data_bag
+      settings = Chef::Mixin::DeepMerge.deep_merge(
+        @settings_from_data_bag,
+        node['jira'].to_hash
+      )
 
-          case settings['database']['type']
-          when 'mysql'
-            settings['database']['port'] ||= 3306
-          when 'postgresql'
-            settings['database']['port'] ||= 5432
-          else
-            warn 'Unsupported database type! - Use a supported type or handle DB creation/config in a wrapper cookbook!'
-          end
-        end
-
-        settings
+      case settings['database']['type']
+      when 'mysql'
+        settings['database']['port'] ||= 3306
+      when 'postgresql'
+        settings['database']['port'] ||= 5432
+      else
+        warn 'Unsupported database type! - Use a supported type or handle DB creation/config in a wrapper cookbook!'
       end
+
+      settings
     end
-    # rubocop:enable Metrics/AbcSize
+
+    # Fetchs Confluence settings from the data bag
+    #
+    # @return [Hash] Settings hash
+    def settings_from_data_bag
+      begin
+        bag = node['jira']['data_bag_name']
+        item = node['jira']['data_bag_item']
+        result = data_bag_item(bag, item)['jira']
+        return result if result.is_a?(Hash)
+      rescue
+        Chef::Log.info("Couldn't load data bag item #{bag}/#{item}")
+      end
+      {}
+    end
 
     # Detects the current JIRA version.
     # Returns nil if JIRA isn't installed.

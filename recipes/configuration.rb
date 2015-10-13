@@ -1,4 +1,4 @@
-settings = Jira.settings(node)
+settings = merge_jira_settings
 
 if settings['database']['type'] == 'mysql'
   mysql_connector_j "#{node['jira']['install_path']}/lib"
