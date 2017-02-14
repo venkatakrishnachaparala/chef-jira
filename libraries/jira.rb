@@ -59,24 +59,24 @@ module Jira
 
     # Returns download URL for JIRA artifact
     # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/PerceivedComplexity
     # rubocop:disable CyclomaticComplexity
     def jira_artifact_url
       return node['jira']['url'] unless node['jira']['url'].nil?
 
       base_url = 'https://www.atlassian.com/software/jira/downloads/binary'
       version  = node['jira']['version']
+      product = "#{base_url}/atlassian-jira-#{node['jira']['flavor']}-#{version}"
 
       # JIRA versions >= 7.0.0 have different flavors
-      # Also (at this time) the URLs for flavors unfortunately differ
-      if Gem::Version.new(version) < Gem::Version.new(7)
+      # By default we assume you want >= 7.0.0
+      v = Gem::Version.new(version)
+
+      # Software had a different set of URLs for from 7.0.0 to 7.1.7
+      if node['jira']['flavor'].downcase == 'software' && (v >= Gem::Version.new('7.0.0')) && (v < Gem::Version.new('7.1.9'))
+        product = "#{base_url}/atlassian-jira-#{node['jira']['flavor']}-#{version}-jira-#{version}"
+      elsif v < Gem::Version.new(7)
         product = "#{base_url}/atlassian-jira-#{version}"
-      else
-        case node['jira']['flavor']
-        when 'software'
-          product = "#{base_url}/atlassian-jira-#{node['jira']['flavor']}-#{version}-jira-#{version}"
-        when 'core'
-          product = "#{base_url}/atlassian-jira-#{node['jira']['flavor']}-#{version}"
-        end
       end
 
       # Return actual URL
@@ -85,11 +85,12 @@ module Jira
         "#{product}-#{jira_arch}.bin"
       when 'standalone'
         "#{product}.tar.gz"
-      when 'war'
-        fail 'WAR install type is no longer supported by Atlassian and removed from this cookbook.'
+      else
+        fail 'Only the "installer" or "standalone" install types are supported by Atlassian and this cookbook.'
       end
     end
     # rubocop:enable CyclomaticComplexity
+    # rubocop:enable Metrics/PerceivedComplexity
     # rubocop:enable Metrics/AbcSize
 
     # Returns SHA256 checksum of specific JIRA artifact
@@ -263,6 +264,115 @@ module Jira
             'x32' => '98d41db73b342c95a08fec233ddfb5da928875366e1cfea941be7f95bf0cf126',
             'x64' => '02d5d3adecc4d218ff258ad69ac39390678434359638d1785e78562178f39408',
             'tar' => 'f03f2a8dd42c4b5f03918b326f14d7339f16f60fee0fa4a4d9c2e04c82dbbed2'
+          }
+        },
+        '7.1.10' => {
+          'core' => {
+            'x32' => '530f253a6fa2b4d0e4ec8b02a4c546deeba21e881c8735008640dcaa38958d5d',
+            'x64' => 'deb3ca344a9caba48b444c9dbe7529245c329bfffaaa211bdc52abc9aa4df0ec',
+            'tar' => '234de0845500ede5af654ad2b88ed69ac57aa966c3a5f418b5702ca0508aec44'
+          },
+          'software' => {
+            'x32' => 'a18fddcbc087294b44c6f0da3cd5cfe53aaa8caf7aa74fa30f2aa8ca2ebff58a',
+            'x64' => 'fac63007aaced032ca47855966981ae2808fb2a8e3519e4cdbc799a3341debe0',
+            'tar' => 'd13bd5c8768cc19844f64f6e1e5ae754c2601a955b5a95e1e4ef55e864619a21'
+          }
+        },
+        '7.2.0' => {
+          'core' => {
+            'x32' => 'c3a02583c7498d9fcf6dd92e73b2e0390ef2a0ff03edb5e1396fae3c23bd2d51',
+            'x64' => '42a7ee7379c46d6cbdda498b0a702a000f2806f2153ac132f1645bfe2f39e576',
+            'tar' => '20f376cabd4565d37543f39168c553b717645521b947dc14af85a87a5d6db403'
+          },
+          'software' => {
+            'x32' => 'e6f3369c4ad2788a82e5ca73762076a66c8de149b4e8a8ca14d95e3721f6304b',
+            'x64' => 'ba23f268aff987d6110406dc0d2fa4658c6584db7586755f4fa30cb1a01ae43f',
+            'tar' => 'aef51677548089f9f85e78eefd80bd21af5464a18985e1c071218f921a4f1f10'
+          }
+        },
+        '7.2.1' => {
+          'core' => {
+            'x32' => '0fe47f6f532994fc7a6a8a75a0c03fe47eeb233c68e8996296500f8e770b5b2c',
+            'x64' => '0e1462185b06439edb1c86060214dbcba076dc11142cf3c50ae3ee9acfa53f4a',
+            'tar' => '5ee23a97049080e1379a038635d719f0c694de6fa35aa945d87783f683ba9a6d'
+          },
+          'software' => {
+            'x32' => 'dd6303d52b5be18dcd89423cde5f9be468845036769553c5a1ec0d22517ff188',
+            'x64' => 'b41c0c567a3e203d3e1ade7dbddf2a692dffa9d8629f88281509595665846111',
+            'tar' => '16279d1d3e6cb7fb1bdf74d18fac8467746b72d4164036d19e2955a7332b8cb3'
+          }
+        },
+        '7.2.2' => {
+          'core' => {
+            'x32' => '2cf576a725f5e730ee14028bf61a12d320e1886e5e3beff4869d8e73c2f75dbc',
+            'x64' => '7ab345fb4eb5932c768008c0d15b523f10732774e595d073fd737c410afff3ca',
+            'tar' => '40f923d73abc3cf96c115a8aa6627065cc6c8df946ada226dde80dcfc379904a'
+          },
+          'software' => {
+            'x32' => 'f7e04a8e0ecd593c7a6b04cb5f6c0a6094092f3f17974d96edb9d829c2492f30',
+            'x64' => '8de4607beb9cdcf71b3be7e1cb7c3d1e0c0dd716c0eb79c8b33e299338b5fc6d',
+            'tar' => 'f6a7c72b11e47c4225e71b22531d54279f23a7cbb02671e5d8747c26a98f3d63'
+          }
+        },
+        '7.2.3' => {
+          'core' => {
+            'x32' => '38a6064a63933aecf09b131d70e2c982f55a690b95a2ed3e69b51f00b474940b',
+            'x64' => '39c0a43a62be0a3daba06e66b8c110202815ec8460d437e0a8c4b65df9b966e8',
+            'tar' => '13ae134a4ddeed32b4a08a520c2ec8d410e9e93c4d5657d808b10ac9f83483d2'
+          },
+          'software' => {
+            'x32' => '9d3a0413b32c07ffbfb717efb07d8bde28d9dfdac7cd24396bb6b151757e40d2',
+            'x64' => 'e0d02381d951a0f745c3e1e77e673932d504c90db757f0caa9cd22ab13a6d910',
+            'tar' => 'c9c310fdf4702403f119b804907be8143366b7a9d71d0e28356fe4287a706708'
+          }
+        },
+        '7.2.4' => {
+          'core' => {
+            'x32' => '4b21768c1a04eb6c46fb29b50491c0c50bfbaee0f37d8bb849131fe1264d2140',
+            'x64' => 'b7428584ea394855686a5e5fdb7bc1f636dd2ad133c8a4de39ba6b06c77edd34',
+            'tar' => 'c5927ef75eec40b61e59b0fe4139ef0a2e38765d611cd8458c7b478060eeef52'
+          },
+          'software' => {
+            'x32' => '785052efba8d410fba9d694e94e453879a56643ecd7bdbc299e813a8160f2555',
+            'x64' => '4221c95932f4fa14394526a2ae03e4424f8a0e86979b7c92a8e8c4a020801521',
+            'tar' => '0a57714dc5cf8d136a5ecf9156c6875f5547ce6c2b7aac9acc94695ea2d4b529'
+          }
+        },
+        # 7.2.5 Cancelled
+        '7.2.6' => {
+          'core' => {
+            'x32' => 'd3f9c7bdcc6cf0bd9c68f654b12d1d65e2d45b69e71868c219c300571adcc5ca',
+            'x64' => 'e6afc6aed46b85ee799fd077bf94c2fc7e70ae5d2630580e630aaf97c4cc8d48',
+            'tar' => '4136ffa64c44c84dca33032b1f0fc05b2316fa6beb54cddf0b922084378908e3'
+          },
+          'software' => {
+            'x32' => 'b37882cdadbc98a19bdb833c68a6ee95c8de58d39cf1e14189888b034c676a08',
+            'x64' => 'fb8e1a17f17676373c99bb00df717a148e69897106a66d6f4be3cabfd9af4626',
+            'tar' => '9369a8ce67ff200aa098a14690fd65a023f6ea7c5dbddf300462456cd35bea84'
+          }
+        },
+        '7.2.7' => {
+          'core' => {
+            'x32' => '89759f647b1bd2ebb77915e0dd52609f3adf3ce5af911ceb37fb66a0b9555956',
+            'x64' => '01d8a4edf45817aeff6bee3ec750c6b365bc009dffa3df56f300558b0e433c37',
+            'tar' => 'e27f2d6979beea214775e024989e6ab8de0184d47bda49be076c7b54da1b37e3'
+          },
+          'software' => {
+            'x32' => '16faa31f87bb876bb856bdace1cca3c5d4f4e25a49cc96a9b8c5ffc5953f59a2',
+            'x64' => '2564e47e924155f417706eafacdd089c69c1dfeab03a480946aeb41e8867b58e',
+            'tar' => '40c675eb1f35ca8003c3dfd952d9283bc2a69591bc641f3b40f44acacd02916c'
+          }
+        },
+        '7.3.0' => {
+          'core' => {
+            'x32' => '4e75caced513bf8561e9a03209de9ccf300a8a63523e4963f58b74488af2e7ba',
+            'x64' => '1560cb10a2394e3bf24b3eb51b3313fbf6e97305d5dabb60da961133c168bf4a',
+            'tar' => '07b47225be858eb7ad09f3b434d4865096ab10df92b0499fb234ef270500caac'
+          },
+          'software' => {
+            'x32' => '0d5df8e9001ee5d6d7d20fa678d762de35ff22f6aaadd6f206927ed286ca5498',
+            'x64' => '4e8ed1a8f480a083ad8025e0998795e6613e90cf1e67c7b1e2ab65facf327701',
+            'tar' => '20231b9e3e19b9b52a69e31c9921c9b6876624309da59c9689020dfd1f305944'
           }
         }
       }
