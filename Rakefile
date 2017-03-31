@@ -61,7 +61,7 @@ end
 
 task style: ['style:foodcritic', 'style:rubocop']
 task unit: ['unit:rspec']
-task travis: %w(style unit)
+task travis: %w(style)
 # task full: ['style', 'unit', 'integration:kitchen:all']
 task full: %w(style unit)
 task default: %w(style unit)
