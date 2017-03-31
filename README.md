@@ -105,7 +105,6 @@ enabled      | Whether or not to autotune settings.                             
 type         | Type of tuning to apply. One of 'mixed', 'dedicated' and 'shared'.    | String  | mixed
 total_memory | Total system memory to use for autotune calculations.                 | String  | Ohai value
 
-
 ### JIRA Tomcat Attributes
 
 These attributes are under the `node['jira']['tomcat']` namespace.

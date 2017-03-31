@@ -23,6 +23,7 @@ default['jira']['autotune']['type']    = 'mixed'
 default['jira']['url']      = nil
 default['jira']['checksum'] = nil
 
+default['jira']['apache2']['enabled']            = true
 default['jira']['apache2']['template_cookbook']  = 'jira'
 default['jira']['apache2']['access_log']         = ''
 default['jira']['apache2']['error_log']          = ''
@@ -34,6 +35,14 @@ default['jira']['apache2']['ssl']['access_log']       = ''
 default['jira']['apache2']['ssl']['error_log']        = ''
 default['jira']['apache2']['ssl']['chain_file']       = ''
 default['jira']['apache2']['ssl']['port']             = 443
+
+if node['jira']['apache2']['enabled'] == true
+  default['jira']['proxy']['name']        = node['jira']['apache2']['virtual_host_name']
+  default['jira']['proxy']['ssl']['port'] = node['jira']['apache2']['ssl']['port']
+else
+  default['jira']['proxy']['name']        = node['fqdn']
+  default['jira']['proxy']['ssl']['port'] = 443
+end
 
 default['apache']['listen'] |= ["*:#{node['jira']['apache2']['port']}", "*:#{node['jira']['apache2']['ssl']['port']}"]
 

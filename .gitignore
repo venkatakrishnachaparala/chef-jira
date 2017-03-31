@@ -1,9 +1,17 @@
+# Ignore all hidden files & folders except gitignore & kitchen
+.*
+!/.gitignore
+!/.kitchen*.yml
+!/.rubocop.yml
+!/.foodcritic
+!/.rspec.yml
+!/.drone.yml
+
 # Berkshelf
 Berksfile.lock
 /cookbooks
 
 # Bundler
-.bundle
 bin/
 Gemfile.lock
 
@@ -14,25 +22,12 @@ tmp/
 # Editors
 *~
 *#
-.#*
 \#*#
-.*.sw[a-z]
 *.sublime-project
 *.sublime-workspace
 *.un~
 
-# OS files
-.DS_Store
-
-# rbenv
-.ruby-version
-
 # Test Kitchen
 .kitchen/
 .kitchen.local.yml
-
-# Vagrant
-.vagrant
-
-# vagrant-cache
-.cache
+.kitchen.cloud.yml

@@ -19,6 +19,8 @@ template "#{node['jira']['install_path']}/conf/server.xml" do
   owner node['jira']['user']
   mode '0640'
   variables(
+    proxy_name: node['jira']['proxy']['name'],
+    ssl_port: node['jira']['proxy']['ssl']['port'],
     tomcat: settings['tomcat'],
     template_partial_version: Gem::Version.new(node['jira']['version']).segments.first
   )

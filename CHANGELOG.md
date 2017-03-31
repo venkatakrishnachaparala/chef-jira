@@ -1,5 +1,12 @@
 ## x.y.z (pending)
 
+## 2.14.1
+
+* Enable a switch to activate/disable apache2
+* Update gitignore
+* fix download url for jira 7.2+
+
+
 ## 2.14.0
 
 * Add missing settings to dbconfig.xml
