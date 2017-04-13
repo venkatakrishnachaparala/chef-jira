@@ -39,10 +39,21 @@ platforms:
   attributes:
     apt:
       compile_time_update: true
+
 - name: ubuntu-14.04
   driver_config:
     box: bento/ubuntu-14.04
     image: ubuntu-14-04-x64
+  run_list:
+    - recipe[apt]
+  attributes:
+    apt:
+      compile_time_update: true
+
+- name: ubuntu-16.04
+  driver_config:
+    box: bento/ubuntu-16.04
+    image: ubuntu-16-04-x64
   run_list:
     - recipe[apt]
   attributes:

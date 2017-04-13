@@ -20,6 +20,11 @@ if jira_version != node['jira']['version']
     cwd Chef::Config[:file_cache_path]
     command "./atlassian-jira-#{node['jira']['version']}.bin -q -varfile atlassian-jira-response.varfile"
   end
+
+  execute 'service-jira-stop' do
+    command "#{node['jira']['install_path']}/bin/stop-jira.sh"
+  end
+
 else
   log "JIRA version #{node['jira']['version']} requested, but already at #{jira_version}. Nothing to do." do
     level :info
