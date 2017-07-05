@@ -474,6 +474,42 @@ module Jira
             'x64' => '02ee71ca099e8dfafc8a1eb3999efda00227d7f8e18f48aecb15cdac8a10dd33',
             'tar' => 'd9a7b94bd788ca763a638ee5fa9e2e728bc1f1098fb79fffbbc9915d134d7d14'
           }
+        },
+        '7.3.7' => {
+            'core' => {
+                'x32' => 'be119c3b34af5578f611bbee4cd83021fd0371f103541e6264d7c63acb86beb5',
+                'x64' => '5db66f18d3ebc0f4c87f73c49a0315bb4dfc7aee5c784679f29a0fba483de027',
+                'tar' => '1b1a60b814cb003a13b674f280cbe8043f723dcdeaa3312bf86a3d95d795691e',
+            },
+            'software' => {
+                'x32' => 'b3c1bb8222f4e87ece32b854999833f21b0e4d28a85ca07bd314daa1dacc98f9',
+                'x64' => '677991c42c24f1f19b61b350c0670348cdeb4137af828b55d1ce692c05bae35e',
+                'tar' => '170bc851aefe77c4c783ea8472ebec513de45b659ddf949b4d370ae907b7b6c7',
+            }
+        },
+        '7.3.8' => {
+            'core' => {
+                'x32' => '11e06ea106e90510847ddd5d3cb0ecb611744b1f3dde3e4a383854458cab6c8b',
+                'x64' => '599751fa1a5853d82e2e73e0894f082269b490f6296a7247d3c265f302c76598',
+                'tar' => 'f4c3fabeed1e7fbac64a195061e25831d35bc0ab014b5a44d7533a1d3a233878',
+            },
+            'software' => {
+                'x32' => '2c3cfd94917f1619005a592b590848c57b9b2279b70e689edababfbd4f5cb2b6',
+                'x64' => '006fca290bd9de1cdc4b0bb281e124068f58129a4cf7ca0501a86bfd4ca16b55',
+                'tar' => '0ed7277ec6d9fd45d56b4a30d75b036af70ba7fee3e4e9c585725373aee4fce0',
+            }
+        },
+        '7.4.0' => {
+            'core' => {
+                'x32' => 'dfe5140d266c157e56f37116968ca1910d93eb584bf4ddfb1bdc61983233ed3a',
+                'x64' => '60ec0dbd57a5a2b18b8dc65291b857f81ed3c2d0dcd65ae05a976e7f6f8a86cd',
+                'tar' => 'b3a504a8ad184f1dc60bcce04f9ff111355dbfee99df9bea0d49760f1b318a15',
+            },
+            'software' => {
+                'x32' => '99fe7854aeb211b582d35fc6a4bbe43aeb6a2dc426d3af348859a7fe599d93c0',
+                'x64' => '15a6fa4e95b0e0272c2338cbb9732f8746928de0775aa49b65d2b7f906f6af10',
+                'tar' => '303b9c810ea8354ff8471922e563f22585ba7bc3b3a010f4fa5353a12fbbe18a',
+            }
         }
       }
     end
