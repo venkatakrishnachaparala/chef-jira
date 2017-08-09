@@ -12,6 +12,8 @@
   <% when "mssql" -%>
   <database-type>mssql</database-type>
   <schema-name>dbo</schema-name>
+  <% when "oracle" -%>
+  <database-type>oracle10g</database-type>
   <% end -%>
   <jdbc-datasource>
     <% case @database["type"] -%>
@@ -29,6 +31,11 @@
     <url>jdbc:jtds:sqlserver://<%= @database["host"] %>:<%= @database["port"] %>/<%= @database["name"] %></url>
     <driver-class>net.sourceforge.jtds.jdbc.Driver</driver-class>
     <validation-query>select 1</validation-query>
+    <% when "oracle" -%>
+    <url>jdbc:oracle:thin:@//<%= @database["host"] %>:<%= @database["port"] %>/<%= @database["name"] %></url>
+    <driver-class>oracle.jdbc.OracleDriver</driver-class>
+    <validation-query>select 1 from dual</validation-query>
+    <pool-test-on-borrow>false</pool-test-on-borrow>
     <% end -%>
     <username><%= @database["user"] %></username>
     <password><%= @database["password"] %></password>

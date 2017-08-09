@@ -19,6 +19,8 @@ module Jira
         settings['database']['port'] ||= 3306
       when 'postgresql'
         settings['database']['port'] ||= 5432
+      when 'oracle'
+        settings['database']['port'] ||= 1521
       else
         warn 'Unsupported database type! - Use a supported type or handle DB creation/config in a wrapper cookbook!'
       end
