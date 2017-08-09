@@ -21,8 +21,12 @@ if jira_version != node['jira']['version']
     command "./atlassian-jira-#{node['jira']['version']}.bin -q -varfile atlassian-jira-response.varfile"
   end
 
-  execute 'service-jira-stop' do
+  # Installer always starts JIRA, which causes an issue in Tomcat catalina.sh, causing a cascading
+  # failure in systemd and the Chef run. Nasty workaround: stop it and then start as a system service.
+  execute 'Stop JIRA' do
     command "#{node['jira']['install_path']}/bin/stop-jira.sh"
+    ignore_failure true
+    notifies :restart, 'service[jira]'
   end
 
 else
