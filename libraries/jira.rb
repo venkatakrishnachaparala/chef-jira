@@ -371,6 +371,30 @@ module Jira
             'tar' => '40c675eb1f35ca8003c3dfd952d9283bc2a69591bc641f3b40f44acacd02916c'
           }
         },
+        '7.2.8' => {
+          'core' => {
+            'x32' => '23eddc46caa36d53945fc01e668e3a7dcbc26b9e9c938a77d1a4eff74e600d00',
+            'x64' => '2b79736d90343a24d29d2162d46ac321722d94aed8ada399b6ab2b7df510d1a0',
+            'tar' => '8e6eb7f7675f6c2573e57a0fee9eb1c9a97991f2e12eadc0b0a3c5da223a2f7a'
+          },
+          'software' => {
+            'x32' => '005bf5ef4a15c83d15d944986293aa72fad5b0a12f9167184c5601a6104a7907',
+            'x64' => '38a344396406b53567649a007852dafb0aab2da2fab23363f25d247be56fad31',
+            'tar' => '4a2fd397f54fd00dc06ba1a8537666fff9eab6700b1dd9e4668189d6d8cc2784'
+          }
+        },
+        '7.2.9' => {
+          'core' => {
+            'x32' => '4fef08dbdbbc89bc209dac5dc3f01d79b96a5291816dc79d032b178885eaa7b3',
+            'x64' => '4cae2d84c5b40e23fefcb7ced905a148ac71cbe5e01eee3bdc90c24986aeba09',
+            'tar' => '06b6e89c8926355b83dc635148e90fa04f8655677ed357f0ad30df16bb399c3e'
+          },
+          'software' => {
+            'x32' => 'fcd11487d4924c6f815519b7cbf8b2a9e40a1916c6a7361696fdf73f997e2051',
+            'x64' => '0643dfd1b0923c9cb337f0d596fff2e08f34c553ae389657f4308f176fcce468',
+            'tar' => '03b16edb9489b9f5fde4017632ebbc9eab38a469e84c10ee2e7a7d34895ebcea'
+          }
+        },
         '7.3.0' => {
           'core' => {
             'x32' => '4e75caced513bf8561e9a03209de9ccf300a8a63523e4963f58b74488af2e7ba',
@@ -382,6 +406,114 @@ module Jira
             'x64' => '4e8ed1a8f480a083ad8025e0998795e6613e90cf1e67c7b1e2ab65facf327701',
             'tar' => '20231b9e3e19b9b52a69e31c9921c9b6876624309da59c9689020dfd1f305944'
           }
+        },
+        '7.3.1' => {
+          'core' => {
+            'x32' => 'f0e68ae0a8df173ffb2e1899a619d4f6995fafc71c50dc7842d285ade12d2a06',
+            'x64' => 'e9eeb67157e0f16e2b31a3d7d8c0618bb394bff90cd037646d1fd7a87dff8e7b',
+            'tar' => '21fa728699f427450eeee5df81dafb5fada6615e5b330fccbf083ac1789bf75d'
+          },
+          'software' => {
+            'x32' => '8a277d0db46e751ca5641b30cb24c1f86a5ba2cd4e842f38e5af589a2006c890',
+            'x64' => '8d9582e202642402508be71eb633de16af089fb93d25eba8cf9a6c85728a8db5',
+            'tar' => '10b3cb25812a49e9db5350d51e53c157e138b26c1947f260cbbc4b39e4ba3b5e'
+          }
+        },
+        '7.3.2' => {
+          'core' => {
+            'x32' => 'f3c38160a4254ec11b6071d01c5a052e543bcefa26bd17219c86af32bd276817',
+            'x64' => '8a65b8e042b17622a6e123d1d92f0507229e35437d94f84da4fa06be926e5dd2',
+            'tar' => '0e72bcc86f1b0e3882bfb4095aba2911c39934eb5e41de2b89f54b56bf8325f0'
+          },
+          'software' => {
+            'x32' => '33f9ac3d6050279d60465aa88e946cde67e47c9a6f3ca53502d26a1f77ef4053',
+            'x64' => '47c3ed00671bd59a7e4eac84c736dc20572d167c0678a45c980a2147ba4fc8a1',
+            'tar' => '590fd3c76373e487b9244e3127276f4c73d0a2df69507662242801ff9d6f46a3'
+          }
+        },
+        '7.3.3' => {
+          'core' => {
+            'x32' => '91267ca31d94629419c36337df3128db6c1a09370d5474845b7fd624bcb12a94',
+            'x64' => '640d693737e178326053d06a7a81ca30340d02ad433ead228885933f200efc6e',
+            'tar' => 'b3428cb8e2088c98ddd28632f86588c334c1cb537b98f1be3248b38bc4b9a2d8'
+          },
+          'software' => {
+            'x32' => 'd0eed0f8fff5ffe33a3303420db04f4c575fc6de49272e3aabab3fbc0c1e8bc0',
+            'x64' => 'e00c469e73d41977eb92aaeb1af1ca65cb1cd6d08ea4a4843286cf42640bfc57',
+            'tar' => '30beb999e42fb6efcd52c06c05465de5b025b5c29fd1860ccf2ab7b3c64111c3'
+          }
+        },
+        '7.3.4' => {
+          'core' => {
+            'x32' => '12a6d8c0a21544698a0eafa760f9a0ebdac0a23509373b2ef8096f529a78971c',
+            'x64' => 'edef74c40fbda862c60b46b929009421761d18dc2f9d036f739874a4200deea6',
+            'tar' => 'af5fecffa8da44618bffd9ba68816f7bc4d0ce3a8cac7917c05d41119918c22a'
+          },
+          'software' => {
+            'x32' => '189df4fd058212a9e0ec79b0401876cd2158ac1f6b5c1b94a8a19c51804dc40c',
+            'x64' => 'ffb1f10df3f3f21219f854113a273aeb6f724165642af578bbacb5dcd4e870c1',
+            'tar' => 'e76d827ded166a0edead6cbed316f9ddbb90999a78b541b3289bc3332c727c76'
+          }
+        },
+        '7.3.5' => {
+          'core' => {
+            'x32' => 'e3547b3abd75a0b235f1675828d6eba332143011afc5ac2c4532984226d5aaa5',
+            'x64' => '40eb2b3af3dd0809dc8d42be4ed26c12356b2caf869eb469fab133383e5e0160',
+            'tar' => '7c2cc62000fae8d85950611413266dd12f7acdbb77fe636991e937977e731b1e'
+          },
+          'software' => {
+            'x32' => '7bf262a6d99f3d6e49fdb69d94d13726e44bbc2395a6dc0101ae4ce85649fce4',
+            'x64' => 'b7675a8f0044883dd4152f373806ad0d585f4da3ddd7d441947a6d8aeaf0c23b',
+            'tar' => 'e974a927efd90c926be32b47e8b456f41c54cd3d92a88bf8fdc8887aa8d28776'
+          }
+        },
+        '7.3.6' => {
+          'core' => {
+            'x32' => 'c53b029d734cee55e015e47d9b153afaca36d0f0c710f422feee485a1f2edd4a',
+            'x64' => '2bd54b26c475367e506aa34a503ba776a89f8e00f40ca51893438695d855e436',
+            'tar' => '8685fe2b259eb3760ea43f8105218b11c5ad581707dd6ad7d3a02672ccb78b85'
+          },
+          'software' => {
+            'x32' => '5c290b607858bea53816bc1f00630f0416e24d87fefcf4ae50b89c05b363d686',
+            'x64' => '02ee71ca099e8dfafc8a1eb3999efda00227d7f8e18f48aecb15cdac8a10dd33',
+            'tar' => 'd9a7b94bd788ca763a638ee5fa9e2e728bc1f1098fb79fffbbc9915d134d7d14'
+          }
+        },
+        '7.3.7' => {
+            'core' => {
+                'x32' => 'be119c3b34af5578f611bbee4cd83021fd0371f103541e6264d7c63acb86beb5',
+                'x64' => '5db66f18d3ebc0f4c87f73c49a0315bb4dfc7aee5c784679f29a0fba483de027',
+                'tar' => '1b1a60b814cb003a13b674f280cbe8043f723dcdeaa3312bf86a3d95d795691e',
+            },
+            'software' => {
+                'x32' => 'b3c1bb8222f4e87ece32b854999833f21b0e4d28a85ca07bd314daa1dacc98f9',
+                'x64' => '677991c42c24f1f19b61b350c0670348cdeb4137af828b55d1ce692c05bae35e',
+                'tar' => '170bc851aefe77c4c783ea8472ebec513de45b659ddf949b4d370ae907b7b6c7',
+            }
+        },
+        '7.3.8' => {
+            'core' => {
+                'x32' => '11e06ea106e90510847ddd5d3cb0ecb611744b1f3dde3e4a383854458cab6c8b',
+                'x64' => '599751fa1a5853d82e2e73e0894f082269b490f6296a7247d3c265f302c76598',
+                'tar' => 'f4c3fabeed1e7fbac64a195061e25831d35bc0ab014b5a44d7533a1d3a233878',
+            },
+            'software' => {
+                'x32' => '2c3cfd94917f1619005a592b590848c57b9b2279b70e689edababfbd4f5cb2b6',
+                'x64' => '006fca290bd9de1cdc4b0bb281e124068f58129a4cf7ca0501a86bfd4ca16b55',
+                'tar' => '0ed7277ec6d9fd45d56b4a30d75b036af70ba7fee3e4e9c585725373aee4fce0',
+            }
+        },
+        '7.4.0' => {
+            'core' => {
+                'x32' => 'dfe5140d266c157e56f37116968ca1910d93eb584bf4ddfb1bdc61983233ed3a',
+                'x64' => '60ec0dbd57a5a2b18b8dc65291b857f81ed3c2d0dcd65ae05a976e7f6f8a86cd',
+                'tar' => 'b3a504a8ad184f1dc60bcce04f9ff111355dbfee99df9bea0d49760f1b318a15',
+            },
+            'software' => {
+                'x32' => '99fe7854aeb211b582d35fc6a4bbe43aeb6a2dc426d3af348859a7fe599d93c0',
+                'x64' => '15a6fa4e95b0e0272c2338cbb9732f8746928de0775aa49b65d2b7f906f6af10',
+                'tar' => '303b9c810ea8354ff8471922e563f22585ba7bc3b3a010f4fa5353a12fbbe18a',
+            }
         }
       }
     end
