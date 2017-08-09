@@ -1,5 +1,14 @@
 ## x.y.z (pending)
 
+## 2.14.2
+
+* Support versions 7.2.8 till 7.4.2
+* Standalone supports chef-client 13+
+* Oracle DB Support
+* Ubuntu 16.04 Xenial Support
+* Fix wrong owner and directory path
+
+
 ## 2.14.1
 
 * Enable a switch to activate/disable apache2
