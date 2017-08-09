@@ -23,6 +23,10 @@ default['jira']['autotune']['type']    = 'mixed'
 default['jira']['url']      = nil
 default['jira']['checksum'] = nil
 
+# Data bag where credentials and other sensitive data could be stored (optional)
+default['jira']['data_bag_name'] = 'jira'
+default['jira']['data_bag_item'] = 'jira'
+
 default['jira']['apache2']['enabled']            = true
 default['jira']['apache2']['template_cookbook']  = 'jira'
 default['jira']['apache2']['access_log']         = ''

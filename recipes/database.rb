@@ -1,4 +1,4 @@
-settings = Jira.settings(node)
+settings = merge_jira_settings
 
 database_connection = {
   :host => settings['database']['host'],
