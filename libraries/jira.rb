@@ -538,7 +538,31 @@ module Jira
                 'x64' => '300fdde3c2a95c0429ff7b3e4697604761b0562cb5ee07e93c17de8c3758e2ba',
                 'tar' => '7f8acde6aeecdb75b93ee4253ce69e423e41e1d5205c4ac9525d9735150bb1ef',
             }
-        }
+        },
+        '7.6.2' => {
+            'core' => {
+                'x32' => '2ec9ecc5ea0ea25f110f76905d7107e9728eb1aa491bdff8b33fccc1339ff517',
+                'x64' => '7d57f37e1456de55619868032c43e31f7070e04d4d42bfb68e41266f7c3419a7',
+                'tar' => '5f85e424ea6c3569f1f6774428380c5fe0de8ee5443cab6d0cc5496e7826daa8',
+            },
+            'software' => {
+                'x32' => '1753e77a83b9bcf0536bf0107cb63e51b4e483126030aff415354472f1456941',
+                'x64' => '768608d3df68803c733b585c97a09bf54b2184350372ec68c91c811098923a4d',
+                'tar' => '143a7a0e7858e4aaa6fcf17518cce6d6400c1fec552b468ce3d017a2363d6997',
+            }
+       },
+        '7.7.1' => {
+          'core' => {
+                'x32' => '9db1ce2bd40aa8af3e34f24dbb21f6ee326aeeea473cee8c58c27dfb5f6b8c2e',
+                'x64' => '8d9ae28b17db74fc28473903483eaadec763ebe66f5358568886f3e08bec0ebe',
+                'tar' => 'a8004190710ce31412b7e1f85e7ece8c3089f84c645008129e0636a4228c3769',
+            },
+            'software' => {
+                'x32' => '9bfe817edaef5261d51c352f3d4c12e0192f8ba3244d6826a8b33df2dca2c3b0',
+                'x64' => 'bbfbd1036de37c75e54831f54827c21656a165cf47a3d6d6574360a5b4b2df23',
+                'tar' => '0c28d2279edbbf5bc174c0a88fa2e98ef36926989fe8151e1f9785ebe8120c48',
+          }        
+         }
       }
     end
     # rubocop:enable Metrics/MethodLength
