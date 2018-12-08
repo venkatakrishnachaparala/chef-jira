@@ -215,7 +215,7 @@ For a full list of contributors, please see [Github](https://github.com/afklm/ji
 
 ## Current maintainers
 
-* KLM Royal Dutch Airlines
+* [katbyte](https://github.com/katbyte)
 
 ## License
 
