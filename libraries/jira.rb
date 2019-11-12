@@ -562,14 +562,9 @@ module Jira
                 'x64' => 'bbfbd1036de37c75e54831f54827c21656a165cf47a3d6d6574360a5b4b2df23',
                 'tar' => '0c28d2279edbbf5bc174c0a88fa2e98ef36926989fe8151e1f9785ebe8120c48',
           }        
-         },
-        '8.5.0' => {
-          'software' => {
-            'x64'    => '3378205274af38735a128d7171c9413b',
-            }
-          }
-        }
-     end
+         }
+      }
+    end
     # rubocop:enable Metrics/MethodLength
 
     # rubocop:disable Metrics/AbcSize
