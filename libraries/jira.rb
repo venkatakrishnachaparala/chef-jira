@@ -562,6 +562,18 @@ module Jira
                 'x64' => 'bbfbd1036de37c75e54831f54827c21656a165cf47a3d6d6574360a5b4b2df23',
                 'tar' => '0c28d2279edbbf5bc174c0a88fa2e98ef36926989fe8151e1f9785ebe8120c48',
           }        
+         },
+        '8.5.0' => {
+          'core' => {
+                'x32' => '9db1ce2bd40aa8af3e34f24dbb21f6ee326aeeea473cee8c58c27dfb5f6b8c2e',
+                'x64' => 'e407c3dc0aca2e3a0310bdcb3d562874',
+                'tar' => 'a8004190710ce31412b7e1f85e7ece8c3089f84c645008129e0636a4228c3769',
+            },
+            'software' => {
+                'x32' => '9bfe817edaef5261d51c352f3d4c12e0192f8ba3244d6826a8b33df2dca2c3b0',
+                'x64' => '3378205274af38735a128d7171c9413b',
+                'tar' => '0c28d2279edbbf5bc174c0a88fa2e98ef36926989fe8151e1f9785ebe8120c48',
+          }        
          }
       }
     end
