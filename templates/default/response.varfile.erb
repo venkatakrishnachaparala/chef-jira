@@ -5,7 +5,7 @@
 rmiPort$Long=8005
 backupJira$Boolean=<%= node['jira']['backup_when_update'] ? "true" : "false" %>
 app.jiraHome=<%= node['jira']['home_path'] %>
-app.install.service$Boolean=false
+app.install.service$Boolean=true
 existingInstallationDir=<%= node['jira']['install_path'] %>
 sys.confirmedUpdateInstallationString=<%= @update ? "true" : "false" %>
 sys.languageId=en
