@@ -21,7 +21,7 @@ default['jira']['autotune']['type']    = 'mixed'
 
 # Defaults are automatically selected from version via helper functions
 default['jira']['url']      = nil
-default['jira']['checksum'] = false
+default['jira']['checksum'] = nil
 
 # Data bag where credentials and other sensitive data could be stored (optional)
 default['jira']['data_bag_name'] = 'jira'
