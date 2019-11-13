@@ -18,7 +18,7 @@ if jira_version != node['jira']['version']
 
   execute "Installing Jira #{node['jira']['version']}" do
     cwd Chef::Config[:file_cache_path]
-    command "./atlassian-jira-#{node['jira']['version']}.bin -q -varfile atlassian-jira-response.varfile"
+    command "./atlassian-jira-#{node['jira']['version']}.bin -y -q -varfile atlassian-jira-response.varfile"
   end
 
   # Installer always starts JIRA, which causes an issue in Tomcat catalina.sh, causing a cascading
