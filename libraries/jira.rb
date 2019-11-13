@@ -571,7 +571,7 @@ module Jira
             },
             'software' => {
                 'x32' => '9bfe817edaef5261d51c352f3d4c12e0192f8ba3244d6826a8b33df2dca2c3b0',
-                'x64' => '3378205274af38735a128d7171c9413b',
+                'x64' => '756cca66eaa2425a79b457e2d94106b80475ffeab4ace55c09bd318e426bf812',
                 'tar' => '0c28d2279edbbf5bc174c0a88fa2e98ef36926989fe8151e1f9785ebe8120c48',
           }        
          }
