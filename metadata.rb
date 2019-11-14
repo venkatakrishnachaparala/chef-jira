@@ -16,11 +16,11 @@ recipe 'jira::autotune', 'Tries to autotune settings/attributes for performance'
 recipe 'jira::standalone', 'Installs/configures JIRA via standalone archive'
 recipe 'jira::sysv', 'Installs/configures JIRA SysV init service'
 
-depends 'apache2'
+depends 'apache2', '=6.0.0'
 depends 'ark'
 depends 'database'
 depends 'java'
-depends 'postgresql'
+depends 'postgresql', '= 6.1.4'
 
 supports 'centos', '>= 6.0'
 supports 'redhat', '>= 6.0'
