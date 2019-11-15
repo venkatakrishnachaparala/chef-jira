@@ -20,7 +20,7 @@ depends 'apache2', '=5.2.1'
 depends 'ark'
 depends 'database'
 depends 'java'
-depends 'postgresql', '= 6.1.1'
+depends 'postgresql', '= 6.0.0'
 
 supports 'centos', '>= 6.0'
 supports 'redhat', '>= 6.0'
