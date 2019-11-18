@@ -16,7 +16,7 @@ recipe 'jira::autotune', 'Tries to autotune settings/attributes for performance'
 recipe 'jira::standalone', 'Installs/configures JIRA via standalone archive'
 recipe 'jira::sysv', 'Installs/configures JIRA SysV init service'
 
-depends 'apache2', '=5.2.1'
+depends 'apache2'
 depends 'ark'
 depends 'database'
 depends 'java'
