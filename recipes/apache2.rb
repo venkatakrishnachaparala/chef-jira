@@ -1,15 +1,19 @@
-include_recipe 'apache2'
-include_recipe 'apache2::mod_proxy'
-include_recipe 'apache2::mod_proxy_http'
-include_recipe 'apache2::mod_ssl'
+apache2_install 'default_install'
+apache2_module 'headers'
+apache2_module 'proxy'
+apache2_module 'proxy_http'
+apache2_module 'rewrite'
+apache2_module 'ssl'
 
 # TODO: Remove this work-around once a fix makes it into apache2 cookbook.
 # See: https://github.com/svanzoest-cookbooks/apache2/issues/398
-log 'forcing apache restart' do
-  notifies :restart, 'service[apache2]'
-  only_if { node['platform'] == 'ubuntu' && node['platform_version'].to_f == 12.04 }
+service 'apache2' do
+  extend Apache2::Cookbook::Helpers
+  service_name lazy { apache_platform_service_name }
+  supports restart: true, status: true, reload: true
+  action :nothing
 end
 
-web_app node['jira']['apache2']['virtual_host_alias'] do
+apache2_default_site['jira']['apache2']['virtual_host_alias'] do
   cookbook node['jira']['apache2']['template_cookbook']
 end
