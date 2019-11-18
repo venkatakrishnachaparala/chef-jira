@@ -48,7 +48,7 @@ when 'mysql'
   end
 when 'postgresql'
   database_connection[:username] = 'postgres'
-  database_connection[:password] = node['postgresql']['password']['postgres']
+  database_connection[:password] = 'changeit'
 
   postgresql_user settings['database']['user'] do
     connection database_connection
