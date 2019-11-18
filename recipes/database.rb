@@ -51,17 +51,13 @@ when 'postgresql'
   database_connection[:password] = 'changeit'
 
   postgresql_user settings['database']['user'] do
-    connection database_connection
-    password settings['database']['password']
+      password settings['database']['password']
     action :create
   end
 
   postgresql_database settings['database']['name'] do
-    connection database_connection
-    connection_limit '-1'
     # See: https://confluence.atlassian.com/display/JIRAKB/Health+Check%3A+Database+Collation
     encoding 'utf8'
-    collation 'C'
     template 'template0'
     owner settings['database']['user']
     action :create
