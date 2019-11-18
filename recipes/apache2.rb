@@ -14,6 +14,6 @@ service 'apache2' do
   action :nothing
 end
 
-apache2_default_site '' do
+apache2_default_site 'jira' do
   action :disable
 end
