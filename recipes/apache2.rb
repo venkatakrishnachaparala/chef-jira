@@ -14,3 +14,6 @@ service 'apache2' do
   action :nothing
 end
 
+apache2_default_site '' do
+  action :disable
+end
