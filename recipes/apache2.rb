@@ -16,5 +16,5 @@ end
 
 apache2_default_site node['jira']['apache2']['virtual_host_alias'] do
   default_site_name 'jira'
-  cookbook node['jira']['apache2']['template_cookbook']
+  template_cookbook node['jira']['apache2']['template_cookbook']
 end
