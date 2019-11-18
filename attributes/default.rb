@@ -102,4 +102,3 @@ default['jira']['crowd_sso']['sso_appname']    = 'jira'
 default['jira']['crowd_sso']['sso_password']   = 'changethistosomethingsensible'
 default['jira']['crowd_sso']['crowd_base_url'] = 'http://localhost:8095/crowd/'
 
-default['postgresql']['pg_gem']['version'] = '0.21.0'
