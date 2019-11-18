@@ -52,14 +52,11 @@ when 'postgresql'
 
   postgresql_user settings['database']['user'] do
       password settings['database']['password']
-    action :create
-  end
+      end
 
   postgresql_database settings['database']['name'] do
     # See: https://confluence.atlassian.com/display/JIRAKB/Health+Check%3A+Database+Collation
     encoding 'utf8'
     template 'template0'
     owner settings['database']['user']
-    action :create
-  end
 end
