@@ -47,13 +47,10 @@ when 'mysql'
     action [:create, :grant]
   end
 when 'postgresql'
-  include_recipe 'postgresql::config_pgtune'
-  include_recipe 'postgresql::server'
-  include_recipe 'database::postgresql'
   database_connection[:username] = 'postgres'
   database_connection[:password] = node['postgresql']['password']['postgres']
 
-  postgresql_database_user settings['database']['user'] do
+  postgresql_user settings['database']['user'] do
     connection database_connection
     password settings['database']['password']
     action :create
