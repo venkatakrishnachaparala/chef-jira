@@ -60,3 +60,4 @@ when 'postgresql'
     template 'template0'
     owner settings['database']['user']
 end
+end
