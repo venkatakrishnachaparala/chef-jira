@@ -1,10 +1,5 @@
 settings = merge_jira_settings
 
-postgresql_server_install 'My PostgreSQL Server install' do
-  version settings['database']['version']
-  action :install
-end
-
 database_connection = {
   :host => settings['database']['host'],
   :port => settings['database']['port']
@@ -54,6 +49,11 @@ when 'mysql'
 when 'postgresql'
   database_connection[:username] = 'postgres'
   database_connection[:password] = 'changeit'
+  
+  postgresql_server_install 'My PostgreSQL Server install' do
+  version settings['database']['version']
+  action :install
+end
 
   postgresql_user settings['database']['user'] do
       password settings['database']['password']
