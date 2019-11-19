@@ -59,6 +59,7 @@ else
   default['jira']['apache2']['ssl']['key_file']         = '/etc/ssl/private/ssl-cert-snakeoil.key'
 end
 
+default['jira']['database']['version']  = '9.6'
 default['jira']['database']['host']     = '127.0.0.1'
 default['jira']['database']['name']     = 'jira'
 default['jira']['database']['password'] = 'changeit'
