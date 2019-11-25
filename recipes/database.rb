@@ -48,7 +48,7 @@ when 'mysql'
   end
 when 'postgresql'
   database_connection[:username] = 'postgres'
-  database_connection[:password] = 'changeit'
+  database_connection[:password] = node['postgresql']['password']['postgres']
   
   postgresql_server_install 'My PostgreSQL Server install' do
   version settings['database']['version']
