@@ -47,8 +47,8 @@ when 'mysql'
     action [:create, :grant]
   end
 when 'postgresql'
-  database_connection[:username] = 'postgres'
-  database_connection[:password] = node['postgresql']['password']['postgres']
+  database_connection[:username] =  node['database']['user']
+  database_connection[:password] = node['database']['password']
   
   postgresql_server_install 'My PostgreSQL Server install' do
   version settings['database']['version']
