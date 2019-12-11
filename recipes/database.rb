@@ -47,8 +47,8 @@ when 'mysql'
     action [:create, :grant]
   end
 when 'postgresql'
-  database_connection[:username] =  node['database']['user']
-  database_connection[:password] = node['database']['password']
+  database_connection[:username] =  node['jira']['database']['user']
+  database_connection[:password] = node['jira']['database']['password']
   
   postgresql_server_install 'My PostgreSQL Server install' do
   version settings['database']['version']
