@@ -18,9 +18,7 @@ recipe 'jira::sysv', 'Installs/configures JIRA SysV init service'
 
 depends 'apache2'
 depends 'ark'
-depends 'database'
 depends 'java'
-depends 'postgresql'
 
 supports 'centos', '>= 6.0'
 supports 'redhat', '>= 6.0'
